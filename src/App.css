@@ -1,0 +1,121 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.app-header {
+  width: 100%;
+  padding: 60px 20px 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px var(--primary-accent-glow));
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.app-main {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px 80px;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 20px;
+  border-radius: 30px;
+}
+
+.search-icon {
+  color: var(--text-muted);
+  margin-right: 12px;
+}
+
+.search-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: inherit;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.loading-state, .error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+.error-state {
+  color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.spinner {
+  color: var(--primary-accent);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.results-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.results-header span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
