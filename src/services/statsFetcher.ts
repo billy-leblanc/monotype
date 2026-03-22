@@ -70,7 +70,7 @@ function parseChaosData(data: ChaosData): ParsedPokemon[] {
           switchPct: payload[2] ?? 0
         };
       })
-      .sort((a, b) => b.score - a.score)
+      .sort((a, b) => (b.koPct + b.switchPct) - (a.koPct + a.switchPct))
       .slice(0, 10); // Top 10 counters
 
     // Estimate usage percent (raw count / total teams)*100
