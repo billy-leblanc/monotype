@@ -2,7 +2,7 @@ import type { ChaosData, ParsedPokemon } from '../types/smogon';
 
 // Smogon Gen9 Monotype usage stats API
 const DATA_URL = '/api/smogon/stats/2026-02/chaos/gen9monotype-1630.json';
-const CACHE_KEY = 'monotype_chaos_data';
+const CACHE_KEY = 'monotype_chaos_data_v2';
 const CACHE_TIME = 1000 * 60 * 60 * 24; // 24 hours
 
 export async function fetchStats(): Promise<ParsedPokemon[]> {
