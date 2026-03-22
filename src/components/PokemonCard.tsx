@@ -19,7 +19,10 @@ export const PokemonCard: React.FC<Props> = ({ data, rank }) => {
       <div className="card-header" onClick={() => setExpanded(!expanded)}>
         <div className="card-rank">#{rank}</div>
         <div className="card-main-info">
-          <h2 className="pokemon-name">{data.name}</h2>
+          <div className="pokemon-name-group">
+            <h2 className="pokemon-name">{data.name}</h2>
+            <span className="pokemon-types">{data.types.join(' / ')}</span>
+          </div>
           <div className="usage-bar-container">
             <div className="usage-bar" style={{ width: `${Math.min(data.usagePct, 100)}%` }}></div>
           </div>
