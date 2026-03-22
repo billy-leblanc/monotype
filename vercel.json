@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/smogon/:match*",
+      "destination": "https://www.smogon.com/:match*"
+    }
+  ]
+}
