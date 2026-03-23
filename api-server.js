@@ -81,8 +81,12 @@ app.post('/api/chat', async (req, res) => {
         const parseEVs = (str) => {
           if (!str || !str.includes(':')) return undefined;
           const [nature, evsText] = str.split(':');
-          const evs = evsText.split('/').map(Number);
-          return { nature, evs: { hp: evs[0], atk: evs[1], def: evs[2], spa: evs[3], spd: evs[4], spe: evs[5] } };
+          if (!evsText) return { nature: nature.trim() };
+          const evs = evsText.split('/').map(s => parseInt(s.trim()) || 0);
+          return { 
+            nature: nature.trim(), 
+            evs: { hp: evs[0], atk: evs[1], def: evs[2], spa: evs[3], spd: evs[4], spe: evs[5] } 
+          };
         };
 
         const att = parseEVs(payload.attackerStrEVs);

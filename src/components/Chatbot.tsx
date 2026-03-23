@@ -40,7 +40,7 @@ export function AICoach({ allPokemon, userTeam }: { allPokemon?: any[], userTeam
       const endpoint = `${apiBase}/api/chat`;
       const prunedMessages = newMessages.slice(-10);
 
-      const contextPayload = allPokemon?.slice(0, 75).map(p => ({
+      const contextPayload = allPokemon?.slice(0, 150).map(p => ({
         Pokemon: p.name,
         Item: p.topItems[0]?.name || 'None',
         Ability: p.topAbilities[0]?.name || 'Unknown',
