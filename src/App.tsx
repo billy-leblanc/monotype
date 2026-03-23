@@ -3,6 +3,11 @@ import { fetchStats } from './services/statsFetcher';
 import type { MonotypeData } from './types/smogon';
 import { PokemonCard } from './components/PokemonCard';
 import { TeamCard } from './components/TeamCard';
+import { AICoach } from './components/Chatbot';
+import { TeamUploader } from './components/TeamUploader';
+import { BattleTracker } from './components/BattleTracker';
+import type { OpponentPokemon } from './components/BattleTracker';
+import type { UserPokemon } from './utils/showdownParser';
 import { Search, Loader2, BarChart3, Users, Swords, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import './App.css';
@@ -12,6 +17,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
+  const [userTeam, setUserTeam] = useState<UserPokemon[]>([]);
+  const [opponentTeam, setOpponentTeam] = useState<OpponentPokemon[]>([]);
+  const [isAnalyzingLog, setIsAnalyzingLog] = useState(false);
+  const [logError, setLogError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'pokemon' | 'teams' | 'types'>('pokemon');
   const [selectedMon, setSelectedMon] = useState<string | null>(null);
   const [openType, setOpenType] = useState<string | null>(null);
@@ -38,9 +47,44 @@ function App() {
 
   const filteredData = data?.pokemon.filter(p => p.name.toLowerCase().includes(search.toLowerCase())) || [];
   const selectedPokemonData = data?.pokemon.find(p => p.name === selectedMon);
+  const handleAnalyzeLog = async (log: string) => {
+    setLogError(null);
+    try {
+      const apiBase = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
+      const endpoint = `${apiBase}/api/chat`;
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          messages: [{ role: 'user', content: `BATTLE_LOG_SYNC: ${log}` }],
+          pokemonContext: [], // In search mode we don't need full context
+          userTeamContext: userTeam
+        })
+      });
+      if (!res.ok) {
+         const errData = await res.json();
+         throw new Error(errData.error || 'Log sync failed');
+      }
+      const data = await res.json();
+      if (data.battleState) {
+        setOpponentTeam(data.battleState);
+      }
+    } catch (err: any) {
+      console.error("Log sync failed:", err);
+      setLogError(err.message || "Failed to analyze battle log.");
+    } finally {
+      setIsAnalyzingLog(false);
+    }
+  };
 
   return (
     <div className="app-container">
+      <BattleTracker 
+        opponentTeam={opponentTeam} 
+        onLogSubmit={handleAnalyzeLog} 
+        isLoading={isAnalyzingLog}
+        error={logError}
+      />
       {selectedMon && selectedPokemonData && (
         <div className="modal-overlay" onClick={() => setSelectedMon(null)}>
           <div className="modal-content glass-panel" onClick={e => e.stopPropagation()}>
@@ -73,22 +117,51 @@ function App() {
       )}
 
       <header className="app-header">
-        <div className="header-content">
-          <h1 className="title">
-            <span className="title-gradient">Monotype Analyzer</span>
-          </h1>
-          <p className="subtitle">
-            Gen 9 Monotype ({elo} ELO) Tactics & Teambuilding Data
-          </p>
-          <div className="elo-tabs glass-panel">
-            <button className={`elo-btn ${elo === '1500' ? 'active' : ''}`} onClick={() => setElo('1500')}>1500 (Low ELO)</button>
-            <button className={`elo-btn ${elo === '1630' ? 'active' : ''}`} onClick={() => setElo('1630')}>1630 (Mid ELO)</button>
-            <button className={`elo-btn ${elo === '1760' ? 'active' : ''}`} onClick={() => setElo('1760')}>1760 (High ELO)</button>
+        <div className="header-top">
+          <div className="header-identity">
+            <AICoach allPokemon={data?.pokemon} userTeam={userTeam} />
+            <div className="header-action-area">
+              <TeamUploader onTeamLoaded={setUserTeam} />
+            </div>
+          </div>
+        </div>
+
+        <div className="battle-workflow glass-panel centered-workflow">
+          <div className="workflow-step">
+            <div className="step-num">1</div>
+            <div className="step-txt">
+              <strong>Import Your Team</strong>
+              <p>Paste your Showdown export to start.</p>
+            </div>
+          </div>
+          <div className="workflow-divider">→</div>
+          <div className="workflow-step">
+            <div className="step-num">2</div>
+            <div className="step-txt">
+              <strong>Track the Match</strong>
+              <p>Paste battle logs into the <strong>Live Tracker</strong> (sidebar).</p>
+            </div>
+          </div>
+          <div className="workflow-divider">→</div>
+          <div className="workflow-step">
+            <div className="step-num">3</div>
+            <div className="step-txt">
+              <strong>Win with the Coach</strong>
+              <p>Ask <strong>Prof. Oak</strong> for switch-outs and calcs.</p>
+            </div>
           </div>
         </div>
       </header>
 
       <main className="app-main">
+        <div className="elo-selection-bar">
+          <div className="elo-label">Show Accuracy for ELO:</div>
+          <div className="elo-tabs-minimal">
+            <button className={`elo-minimal-btn ${elo === '1500' ? 'active' : ''}`} onClick={() => setElo('1500')}>1500</button>
+            <button className={`elo-minimal-btn ${elo === '1630' ? 'active' : ''}`} onClick={() => setElo('1630')}>1630</button>
+            <button className={`elo-minimal-btn ${elo === '1760' ? 'active' : ''}`} onClick={() => setElo('1760')}>1760</button>
+          </div>
+        </div>
         <div className="tab-navigation glass-panel">
           <button 
             className={`tab-btn ${activeTab === 'pokemon' ? 'active' : ''}`}
