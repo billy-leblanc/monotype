@@ -30,6 +30,8 @@ function App() {
   const [elo, setElo] = useState<'1500' | '1630' | '1760'>('1760');
   const [compactMode, setCompactMode] = useState(false);
 
+  const [typeFilter, setTypeFilter] = useState<string | null>(null);
+
   useEffect(() => {
     let active = true;
     async function loadData() {
@@ -49,7 +51,11 @@ function App() {
     return () => { active = false; };
   }, [elo]);
 
-  const filteredData = data?.pokemon?.filter(p => p.name.toLowerCase().includes(search.toLowerCase())) || [];
+  const filteredData = data?.pokemon?.filter(p => {
+    if (typeFilter && !p.types.includes(typeFilter)) return false;
+    if (search && !p.name.toLowerCase().includes(search.toLowerCase())) return false;
+    return true;
+  }) || [];
   const selectedPokemonData = data?.pokemon?.find(p => p.name === selectedMon);
   
   const handleAnalyzeLog = async (log: string) => {
@@ -293,8 +299,8 @@ function App() {
                   {['Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water'].map(t => (
                      <button 
                        key={t}
-                       className={`type-filter-btn ${search.toLowerCase() === t.toLowerCase() ? 'active' : ''}`}
-                       onClick={() => setSearch(search.toLowerCase() === t.toLowerCase() ? '' : t)}
+                       className={`type-filter-btn ${typeFilter === t ? 'active' : ''}`}
+                       onClick={() => setTypeFilter(typeFilter === t ? null : t)}
                      >
                        {t}
                      </button>
