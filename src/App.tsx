@@ -28,7 +28,7 @@ function App() {
   const [openType, setOpenType] = useState<string | null>(null);
   const [elo, setElo] = useState<'1500' | '1630' | '1760'>('1760');
   const [compactMode, setCompactMode] = useState(false);
-  const [headerCollapsed, setHeaderCollapsed] = useState(false);
+  const [headerCollapsed, setHeaderCollapsed] = useState(true);
 
   useEffect(() => {
     let active = true;
@@ -169,11 +169,11 @@ function App() {
         </header>
 
       <main className="app-main">
-        <div className="elo-selection-bar">
-          <div className="elo-tabs-minimal">
-            <button className={`elo-minimal-btn ${elo === '1500' ? 'active' : ''}`} onClick={() => setElo('1500')}>1500 MMR</button>
-            <button className={`elo-minimal-btn ${elo === '1630' ? 'active' : ''}`} onClick={() => setElo('1630')}>1630 MMR</button>
-            <button className={`elo-minimal-btn ${elo === '1760' ? 'active' : ''}`} onClick={() => setElo('1760')}>1760 MMR</button>
+        <div className="elo-selection-bar" style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+          <div className="elo-tabs glass-panel">
+            <button className={`elo-btn ${elo === '1500' ? 'active' : ''}`} onClick={() => setElo('1500')}>1500 MMR</button>
+            <button className={`elo-btn ${elo === '1630' ? 'active' : ''}`} onClick={() => setElo('1630')}>1630 MMR</button>
+            <button className={`elo-btn ${elo === '1760' ? 'active' : ''}`} onClick={() => setElo('1760')}>1760 MMR</button>
           </div>
         </div>
         <div className="tab-navigation glass-panel">

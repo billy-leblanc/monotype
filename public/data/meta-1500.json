@@ -106772,24 +106772,942 @@
     }
   ],
   "leads": {
-    "Normal": [],
-    "Fighting": [],
-    "Flying": [],
-    "Poison": [],
-    "Ground": [],
-    "Rock": [],
-    "Bug": [],
-    "Ghost": [],
-    "Steel": [],
-    "Fire": [],
-    "Water": [],
-    "Grass": [],
-    "Electric": [],
-    "Psychic": [],
-    "Ice": [],
-    "Dragon": [],
-    "Dark": [],
-    "Fairy": []
+    "Normal": [
+      {
+        "pokemon": "Blissey",
+        "usagePct": 12.05528,
+        "rawCount": 1868
+      },
+      {
+        "pokemon": "Ursaluna",
+        "usagePct": 10.99119,
+        "rawCount": 1734
+      },
+      {
+        "pokemon": "Smeargle",
+        "usagePct": 9.51295,
+        "rawCount": 2064
+      },
+      {
+        "pokemon": "Terapagos",
+        "usagePct": 9.12392,
+        "rawCount": 1575
+      },
+      {
+        "pokemon": "Zoroark-Hisui",
+        "usagePct": 8.62818,
+        "rawCount": 1615
+      },
+      {
+        "pokemon": "Porygon2",
+        "usagePct": 8.07949,
+        "rawCount": 1325
+      },
+      {
+        "pokemon": "Indeedee",
+        "usagePct": 5.23127,
+        "rawCount": 776
+      },
+      {
+        "pokemon": "Staraptor",
+        "usagePct": 4.44027,
+        "rawCount": 746
+      },
+      {
+        "pokemon": "Maushold",
+        "usagePct": 4.2174,
+        "rawCount": 1077
+      },
+      {
+        "pokemon": "Ambipom",
+        "usagePct": 3.3409,
+        "rawCount": 732
+      }
+    ],
+    "Fighting": [
+      {
+        "pokemon": "Great Tusk",
+        "usagePct": 17.69142,
+        "rawCount": 3318
+      },
+      {
+        "pokemon": "Sneasler",
+        "usagePct": 15.88854,
+        "rawCount": 2909
+      },
+      {
+        "pokemon": "Iron Valiant",
+        "usagePct": 10.12015,
+        "rawCount": 1659
+      },
+      {
+        "pokemon": "Urshifu-Rapid-Strike",
+        "usagePct": 9.34942,
+        "rawCount": 1637
+      },
+      {
+        "pokemon": "Iron Hands",
+        "usagePct": 8.91248,
+        "rawCount": 1491
+      },
+      {
+        "pokemon": "Infernape",
+        "usagePct": 3.94383,
+        "rawCount": 728
+      },
+      {
+        "pokemon": "Cobalion",
+        "usagePct": 3.9044,
+        "rawCount": 707
+      },
+      {
+        "pokemon": "Gallade",
+        "usagePct": 3.70877,
+        "rawCount": 590
+      },
+      {
+        "pokemon": "Breloom",
+        "usagePct": 3.30746,
+        "rawCount": 648
+      },
+      {
+        "pokemon": "Scrafty",
+        "usagePct": 3.07016,
+        "rawCount": 723
+      }
+    ],
+    "Flying": [
+      {
+        "pokemon": "Gliscor",
+        "usagePct": 20.35603,
+        "rawCount": 3019
+      },
+      {
+        "pokemon": "Tornadus-Therian",
+        "usagePct": 12.89241,
+        "rawCount": 1528
+      },
+      {
+        "pokemon": "Landorus-Therian",
+        "usagePct": 10.23901,
+        "rawCount": 1478
+      },
+      {
+        "pokemon": "Landorus",
+        "usagePct": 6.89723,
+        "rawCount": 847
+      },
+      {
+        "pokemon": "Skarmory",
+        "usagePct": 5.85272,
+        "rawCount": 1073
+      },
+      {
+        "pokemon": "Corviknight",
+        "usagePct": 5.59811,
+        "rawCount": 820
+      },
+      {
+        "pokemon": "Enamorus",
+        "usagePct": 4.39436,
+        "rawCount": 546
+      },
+      {
+        "pokemon": "Pelipper",
+        "usagePct": 4.31661,
+        "rawCount": 919
+      },
+      {
+        "pokemon": "Thundurus-Therian",
+        "usagePct": 3.40048,
+        "rawCount": 439
+      },
+      {
+        "pokemon": "Dragonite",
+        "usagePct": 2.72605,
+        "rawCount": 442
+      }
+    ],
+    "Poison": [
+      {
+        "pokemon": "Glimmora",
+        "usagePct": 21.8299,
+        "rawCount": 4428
+      },
+      {
+        "pokemon": "Sneasler",
+        "usagePct": 12.03821,
+        "rawCount": 1844
+      },
+      {
+        "pokemon": "Muk-Alola",
+        "usagePct": 11.94774,
+        "rawCount": 1746
+      },
+      {
+        "pokemon": "Weezing-Galar",
+        "usagePct": 7.88207,
+        "rawCount": 1211
+      },
+      {
+        "pokemon": "Iron Moth",
+        "usagePct": 7.30347,
+        "rawCount": 1027
+      },
+      {
+        "pokemon": "Clodsire",
+        "usagePct": 7.08357,
+        "rawCount": 1624
+      },
+      {
+        "pokemon": "Toxapex",
+        "usagePct": 4.92328,
+        "rawCount": 1078
+      },
+      {
+        "pokemon": "Slowking-Galar",
+        "usagePct": 4.17737,
+        "rawCount": 679
+      },
+      {
+        "pokemon": "Salazzle",
+        "usagePct": 3.71161,
+        "rawCount": 799
+      },
+      {
+        "pokemon": "Okidogi",
+        "usagePct": 2.86384,
+        "rawCount": 363
+      }
+    ],
+    "Ground": [
+      {
+        "pokemon": "Hippowdon",
+        "usagePct": 25.03158,
+        "rawCount": 4475
+      },
+      {
+        "pokemon": "Landorus",
+        "usagePct": 13.08746,
+        "rawCount": 1754
+      },
+      {
+        "pokemon": "Mamoswine",
+        "usagePct": 9.88431,
+        "rawCount": 1342
+      },
+      {
+        "pokemon": "Garchomp",
+        "usagePct": 8.92235,
+        "rawCount": 1613
+      },
+      {
+        "pokemon": "Clodsire",
+        "usagePct": 8.3849,
+        "rawCount": 1500
+      },
+      {
+        "pokemon": "Gliscor",
+        "usagePct": 7.1361,
+        "rawCount": 1374
+      },
+      {
+        "pokemon": "Great Tusk",
+        "usagePct": 5.75024,
+        "rawCount": 825
+      },
+      {
+        "pokemon": "Sandy Shocks",
+        "usagePct": 4.03005,
+        "rawCount": 659
+      },
+      {
+        "pokemon": "Excadrill",
+        "usagePct": 3.21623,
+        "rawCount": 536
+      },
+      {
+        "pokemon": "Ting-Lu",
+        "usagePct": 2.27609,
+        "rawCount": 438
+      }
+    ],
+    "Rock": [
+      {
+        "pokemon": "Glimmora",
+        "usagePct": 23.78138,
+        "rawCount": 2680
+      },
+      {
+        "pokemon": "Tyranitar",
+        "usagePct": 17.69342,
+        "rawCount": 1834
+      },
+      {
+        "pokemon": "Kleavor",
+        "usagePct": 12.67946,
+        "rawCount": 1326
+      },
+      {
+        "pokemon": "Ogerpon-Cornerstone",
+        "usagePct": 11.3187,
+        "rawCount": 916
+      },
+      {
+        "pokemon": "Garganacl",
+        "usagePct": 10.98463,
+        "rawCount": 1009
+      },
+      {
+        "pokemon": "Lycanroc-Dusk",
+        "usagePct": 4.78831,
+        "rawCount": 393
+      },
+      {
+        "pokemon": "Iron Boulder",
+        "usagePct": 3.96785,
+        "rawCount": 325
+      },
+      {
+        "pokemon": "Arcanine-Hisui",
+        "usagePct": 3.86547,
+        "rawCount": 364
+      },
+      {
+        "pokemon": "Rhyperior",
+        "usagePct": 1.80993,
+        "rawCount": 146
+      },
+      {
+        "pokemon": "Minior",
+        "usagePct": 1.805,
+        "rawCount": 219
+      }
+    ],
+    "Bug": [
+      {
+        "pokemon": "Kleavor",
+        "usagePct": 27.87088,
+        "rawCount": 5639
+      },
+      {
+        "pokemon": "Araquanid",
+        "usagePct": 19.80129,
+        "rawCount": 4405
+      },
+      {
+        "pokemon": "Forretress",
+        "usagePct": 11.51491,
+        "rawCount": 2893
+      },
+      {
+        "pokemon": "Galvantula",
+        "usagePct": 8.88196,
+        "rawCount": 2565
+      },
+      {
+        "pokemon": "Ribombee",
+        "usagePct": 7.33708,
+        "rawCount": 2061
+      },
+      {
+        "pokemon": "Lokix",
+        "usagePct": 5.24691,
+        "rawCount": 1207
+      },
+      {
+        "pokemon": "Scizor",
+        "usagePct": 5.09084,
+        "rawCount": 1073
+      },
+      {
+        "pokemon": "Volcarona",
+        "usagePct": 3.57506,
+        "rawCount": 996
+      },
+      {
+        "pokemon": "Yanmega",
+        "usagePct": 2.34114,
+        "rawCount": 624
+      },
+      {
+        "pokemon": "Slither Wing",
+        "usagePct": 1.99952,
+        "rawCount": 391
+      }
+    ],
+    "Ghost": [
+      {
+        "pokemon": "Dragapult",
+        "usagePct": 13.89713,
+        "rawCount": 3232
+      },
+      {
+        "pokemon": "Froslass",
+        "usagePct": 12.44513,
+        "rawCount": 2901
+      },
+      {
+        "pokemon": "Flutter Mane",
+        "usagePct": 11.24008,
+        "rawCount": 2593
+      },
+      {
+        "pokemon": "Ceruledge",
+        "usagePct": 9.13183,
+        "rawCount": 2294
+      },
+      {
+        "pokemon": "Brambleghast",
+        "usagePct": 7.95151,
+        "rawCount": 1677
+      },
+      {
+        "pokemon": "Gholdengo",
+        "usagePct": 5.79524,
+        "rawCount": 1606
+      },
+      {
+        "pokemon": "Pecharunt",
+        "usagePct": 5.54065,
+        "rawCount": 1422
+      },
+      {
+        "pokemon": "Spectrier",
+        "usagePct": 5.51816,
+        "rawCount": 1195
+      },
+      {
+        "pokemon": "Gengar",
+        "usagePct": 4.49331,
+        "rawCount": 1286
+      },
+      {
+        "pokemon": "Golurk",
+        "usagePct": 4.33894,
+        "rawCount": 1148
+      }
+    ],
+    "Steel": [
+      {
+        "pokemon": "Archaludon",
+        "usagePct": 17.09428,
+        "rawCount": 2667
+      },
+      {
+        "pokemon": "Heatran",
+        "usagePct": 16.98223,
+        "rawCount": 2641
+      },
+      {
+        "pokemon": "Skarmory",
+        "usagePct": 12.99788,
+        "rawCount": 2191
+      },
+      {
+        "pokemon": "Iron Treads",
+        "usagePct": 9.14383,
+        "rawCount": 1411
+      },
+      {
+        "pokemon": "Gholdengo",
+        "usagePct": 6.64641,
+        "rawCount": 1036
+      },
+      {
+        "pokemon": "Scizor",
+        "usagePct": 5.99573,
+        "rawCount": 957
+      },
+      {
+        "pokemon": "Iron Crown",
+        "usagePct": 4.00186,
+        "rawCount": 531
+      },
+      {
+        "pokemon": "Corviknight",
+        "usagePct": 3.86008,
+        "rawCount": 824
+      },
+      {
+        "pokemon": "Klefki",
+        "usagePct": 3.58657,
+        "rawCount": 768
+      },
+      {
+        "pokemon": "Goodra-Hisui",
+        "usagePct": 3.38101,
+        "rawCount": 496
+      }
+    ],
+    "Fire": [
+      {
+        "pokemon": "Torkoal",
+        "usagePct": 21.34265,
+        "rawCount": 4060
+      },
+      {
+        "pokemon": "Heatran",
+        "usagePct": 12.38648,
+        "rawCount": 1935
+      },
+      {
+        "pokemon": "Ninetales",
+        "usagePct": 11.30019,
+        "rawCount": 1799
+      },
+      {
+        "pokemon": "Cinderace",
+        "usagePct": 9.04808,
+        "rawCount": 1279
+      },
+      {
+        "pokemon": "Ogerpon-Hearthflame",
+        "usagePct": 7.52307,
+        "rawCount": 1120
+      },
+      {
+        "pokemon": "Volcanion",
+        "usagePct": 6.44549,
+        "rawCount": 890
+      },
+      {
+        "pokemon": "Ceruledge",
+        "usagePct": 4.89725,
+        "rawCount": 810
+      },
+      {
+        "pokemon": "Rotom-Heat",
+        "usagePct": 4.72465,
+        "rawCount": 741
+      },
+      {
+        "pokemon": "Incineroar",
+        "usagePct": 4.44616,
+        "rawCount": 828
+      },
+      {
+        "pokemon": "Volcarona",
+        "usagePct": 3.20472,
+        "rawCount": 853
+      }
+    ],
+    "Water": [
+      {
+        "pokemon": "Pelipper",
+        "usagePct": 18.65868,
+        "rawCount": 6544
+      },
+      {
+        "pokemon": "Swampert",
+        "usagePct": 14.7789,
+        "rawCount": 3511
+      },
+      {
+        "pokemon": "Samurott-Hisui",
+        "usagePct": 11.58207,
+        "rawCount": 2997
+      },
+      {
+        "pokemon": "Urshifu-Rapid-Strike",
+        "usagePct": 8.73884,
+        "rawCount": 2080
+      },
+      {
+        "pokemon": "Toxapex",
+        "usagePct": 5.72663,
+        "rawCount": 2009
+      },
+      {
+        "pokemon": "Araquanid",
+        "usagePct": 5.4209,
+        "rawCount": 1338
+      },
+      {
+        "pokemon": "Greninja",
+        "usagePct": 4.98285,
+        "rawCount": 1197
+      },
+      {
+        "pokemon": "Empoleon",
+        "usagePct": 2.74886,
+        "rawCount": 749
+      },
+      {
+        "pokemon": "Ogerpon-Wellspring",
+        "usagePct": 2.73753,
+        "rawCount": 702
+      },
+      {
+        "pokemon": "Rotom-Wash",
+        "usagePct": 2.68763,
+        "rawCount": 803
+      }
+    ],
+    "Grass": [
+      {
+        "pokemon": "Meowscarada",
+        "usagePct": 20.25998,
+        "rawCount": 2204
+      },
+      {
+        "pokemon": "Rillaboom",
+        "usagePct": 8.98743,
+        "rawCount": 1545
+      },
+      {
+        "pokemon": "Brambleghast",
+        "usagePct": 7.80096,
+        "rawCount": 741
+      },
+      {
+        "pokemon": "Ogerpon-Hearthflame",
+        "usagePct": 7.33153,
+        "rawCount": 754
+      },
+      {
+        "pokemon": "Whimsicott",
+        "usagePct": 6.51123,
+        "rawCount": 1029
+      },
+      {
+        "pokemon": "Amoonguss",
+        "usagePct": 5.58001,
+        "rawCount": 542
+      },
+      {
+        "pokemon": "Torterra",
+        "usagePct": 4.75171,
+        "rawCount": 715
+      },
+      {
+        "pokemon": "Leavanny",
+        "usagePct": 4.48808,
+        "rawCount": 581
+      },
+      {
+        "pokemon": "Breloom",
+        "usagePct": 4.46227,
+        "rawCount": 467
+      },
+      {
+        "pokemon": "Serperior",
+        "usagePct": 3.4068,
+        "rawCount": 469
+      }
+    ],
+    "Electric": [
+      {
+        "pokemon": "Regieleki",
+        "usagePct": 17.80911,
+        "rawCount": 1408
+      },
+      {
+        "pokemon": "Galvantula",
+        "usagePct": 13.53237,
+        "rawCount": 1614
+      },
+      {
+        "pokemon": "Sandy Shocks",
+        "usagePct": 12.94931,
+        "rawCount": 1165
+      },
+      {
+        "pokemon": "Rotom-Wash",
+        "usagePct": 11.62543,
+        "rawCount": 953
+      },
+      {
+        "pokemon": "Pincurchin",
+        "usagePct": 8.45099,
+        "rawCount": 1003
+      },
+      {
+        "pokemon": "Iron Hands",
+        "usagePct": 5.32754,
+        "rawCount": 468
+      },
+      {
+        "pokemon": "Zapdos",
+        "usagePct": 4.47366,
+        "rawCount": 437
+      },
+      {
+        "pokemon": "Thundurus-Therian",
+        "usagePct": 3.12256,
+        "rawCount": 240
+      },
+      {
+        "pokemon": "Electrode-Hisui",
+        "usagePct": 2.51748,
+        "rawCount": 244
+      },
+      {
+        "pokemon": "Thundurus",
+        "usagePct": 2.42181,
+        "rawCount": 280
+      }
+    ],
+    "Psychic": [
+      {
+        "pokemon": "Indeedee",
+        "usagePct": 13.23784,
+        "rawCount": 1557
+      },
+      {
+        "pokemon": "Deoxys-Speed",
+        "usagePct": 12.99236,
+        "rawCount": 1198
+      },
+      {
+        "pokemon": "Hatterene",
+        "usagePct": 7.42381,
+        "rawCount": 777
+      },
+      {
+        "pokemon": "Latios",
+        "usagePct": 6.55666,
+        "rawCount": 503
+      },
+      {
+        "pokemon": "Bronzong",
+        "usagePct": 5.68564,
+        "rawCount": 450
+      },
+      {
+        "pokemon": "Metagross",
+        "usagePct": 5.65117,
+        "rawCount": 545
+      },
+      {
+        "pokemon": "Hoopa-Unbound",
+        "usagePct": 5.53211,
+        "rawCount": 427
+      },
+      {
+        "pokemon": "Gallade",
+        "usagePct": 4.11568,
+        "rawCount": 394
+      },
+      {
+        "pokemon": "Jirachi",
+        "usagePct": 3.87294,
+        "rawCount": 390
+      },
+      {
+        "pokemon": "Iron Boulder",
+        "usagePct": 3.66261,
+        "rawCount": 325
+      }
+    ],
+    "Ice": [
+      {
+        "pokemon": "Ninetales-Alola",
+        "usagePct": 43.2889,
+        "rawCount": 5254
+      },
+      {
+        "pokemon": "Froslass",
+        "usagePct": 19.15563,
+        "rawCount": 2065
+      },
+      {
+        "pokemon": "Mamoswine",
+        "usagePct": 11.40152,
+        "rawCount": 1055
+      },
+      {
+        "pokemon": "Kyurem",
+        "usagePct": 6.65276,
+        "rawCount": 552
+      },
+      {
+        "pokemon": "Weavile",
+        "usagePct": 3.76498,
+        "rawCount": 427
+      },
+      {
+        "pokemon": "Cloyster",
+        "usagePct": 3.57179,
+        "rawCount": 402
+      },
+      {
+        "pokemon": "Abomasnow",
+        "usagePct": 3.4766,
+        "rawCount": 559
+      },
+      {
+        "pokemon": "Avalugg-Hisui",
+        "usagePct": 1.11497,
+        "rawCount": 138
+      },
+      {
+        "pokemon": "Piloswine",
+        "usagePct": 1.06718,
+        "rawCount": 100
+      },
+      {
+        "pokemon": "Avalugg",
+        "usagePct": 1.06618,
+        "rawCount": 427
+      }
+    ],
+    "Dragon": [
+      {
+        "pokemon": "Archaludon",
+        "usagePct": 19.7899,
+        "rawCount": 4704
+      },
+      {
+        "pokemon": "Garchomp",
+        "usagePct": 16.54,
+        "rawCount": 4029
+      },
+      {
+        "pokemon": "Dragapult",
+        "usagePct": 13.06831,
+        "rawCount": 3054
+      },
+      {
+        "pokemon": "Roaring Moon",
+        "usagePct": 9.44535,
+        "rawCount": 2057
+      },
+      {
+        "pokemon": "Kyurem",
+        "usagePct": 6.61235,
+        "rawCount": 1406
+      },
+      {
+        "pokemon": "Latios",
+        "usagePct": 6.41864,
+        "rawCount": 1309
+      },
+      {
+        "pokemon": "Goodra-Hisui",
+        "usagePct": 5.59799,
+        "rawCount": 1334
+      },
+      {
+        "pokemon": "Raging Bolt",
+        "usagePct": 5.27891,
+        "rawCount": 1076
+      },
+      {
+        "pokemon": "Walking Wake",
+        "usagePct": 2.88457,
+        "rawCount": 687
+      },
+      {
+        "pokemon": "Dragonite",
+        "usagePct": 2.61714,
+        "rawCount": 810
+      }
+    ],
+    "Dark": [
+      {
+        "pokemon": "Ting-Lu",
+        "usagePct": 19.97726,
+        "rawCount": 3402
+      },
+      {
+        "pokemon": "Samurott-Hisui",
+        "usagePct": 15.42667,
+        "rawCount": 2747
+      },
+      {
+        "pokemon": "Meowscarada",
+        "usagePct": 13.38646,
+        "rawCount": 2149
+      },
+      {
+        "pokemon": "Greninja",
+        "usagePct": 8.91396,
+        "rawCount": 1341
+      },
+      {
+        "pokemon": "Grimmsnarl",
+        "usagePct": 6.62615,
+        "rawCount": 1847
+      },
+      {
+        "pokemon": "Darkrai",
+        "usagePct": 4.4215,
+        "rawCount": 851
+      },
+      {
+        "pokemon": "Hoopa-Unbound",
+        "usagePct": 3.71697,
+        "rawCount": 572
+      },
+      {
+        "pokemon": "Roaring Moon",
+        "usagePct": 3.39378,
+        "rawCount": 569
+      },
+      {
+        "pokemon": "Sableye",
+        "usagePct": 3.038,
+        "rawCount": 752
+      },
+      {
+        "pokemon": "Muk-Alola",
+        "usagePct": 2.4103,
+        "rawCount": 560
+      }
+    ],
+    "Fairy": [
+      {
+        "pokemon": "Klefki",
+        "usagePct": 26.95928,
+        "rawCount": 3699
+      },
+      {
+        "pokemon": "Tinkaton",
+        "usagePct": 11.8697,
+        "rawCount": 1682
+      },
+      {
+        "pokemon": "Ribombee",
+        "usagePct": 9.14418,
+        "rawCount": 1425
+      },
+      {
+        "pokemon": "Flutter Mane",
+        "usagePct": 8.35859,
+        "rawCount": 1089
+      },
+      {
+        "pokemon": "Grimmsnarl",
+        "usagePct": 7.85898,
+        "rawCount": 1407
+      },
+      {
+        "pokemon": "Iron Valiant",
+        "usagePct": 6.35166,
+        "rawCount": 817
+      },
+      {
+        "pokemon": "Primarina",
+        "usagePct": 5.66617,
+        "rawCount": 709
+      },
+      {
+        "pokemon": "Hatterene",
+        "usagePct": 4.96467,
+        "rawCount": 833
+      },
+      {
+        "pokemon": "Azumarill",
+        "usagePct": 3.72533,
+        "rawCount": 591
+      },
+      {
+        "pokemon": "Enamorus",
+        "usagePct": 3.12082,
+        "rawCount": 444
+      }
+    ]
   },
   "matchups": {
     "Normal": [
@@ -106868,1259 +107786,1259 @@
     ],
     "Fighting": [
       {
-        "opponentType": "0.000%",
+        "opponentType": "Normal",
         "winPct": 65.022
       },
       {
-        "opponentType": "34.978%",
+        "opponentType": "Fighting",
         "winPct": 0
       },
       {
-        "opponentType": "57.337%",
+        "opponentType": "Flying",
         "winPct": 37.482
       },
       {
-        "opponentType": "46.424%",
+        "opponentType": "Poison",
         "winPct": 39.303
       },
       {
-        "opponentType": "45.924%",
+        "opponentType": "Ground",
         "winPct": 51.393
       },
       {
-        "opponentType": "28.332%",
+        "opponentType": "Rock",
         "winPct": 80.228
       },
       {
-        "opponentType": "51.946%",
+        "opponentType": "Bug",
         "winPct": 64.466
       },
       {
-        "opponentType": "57.651%",
+        "opponentType": "Ghost",
         "winPct": 29.315
       },
       {
-        "opponentType": "40.833%",
+        "opponentType": "Steel",
         "winPct": 63.269
       },
       {
-        "opponentType": "49.221%",
+        "opponentType": "Fire",
         "winPct": 52.917
       },
       {
-        "opponentType": "46.651%",
+        "opponentType": "Water",
         "winPct": 50.234
       },
       {
-        "opponentType": "49.561%",
+        "opponentType": "Grass",
         "winPct": 50.45
       },
       {
-        "opponentType": "56.954%",
+        "opponentType": "Electric",
         "winPct": 54.454
       },
       {
-        "opponentType": "50.101%",
+        "opponentType": "Psychic",
         "winPct": 28.222
       },
       {
-        "opponentType": "54.532%",
+        "opponentType": "Ice",
         "winPct": 65.263
       },
       {
-        "opponentType": "42.657%",
+        "opponentType": "Dragon",
         "winPct": 60.821
       },
       {
-        "opponentType": "38.218%",
+        "opponentType": "Dark",
         "winPct": 68.867
       },
       {
-        "opponentType": "45.952%",
+        "opponentType": "Fairy",
         "winPct": 28.452
       }
     ],
     "Flying": [
       {
-        "opponentType": "65.022%",
+        "opponentType": "Normal",
         "winPct": 42.663
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Fighting",
         "winPct": 62.518
       },
       {
-        "opponentType": "37.482%",
+        "opponentType": "Flying",
         "winPct": 0
       },
       {
-        "opponentType": "39.303%",
+        "opponentType": "Poison",
         "winPct": 66.476
       },
       {
-        "opponentType": "51.393%",
+        "opponentType": "Ground",
         "winPct": 59.835
       },
       {
-        "opponentType": "80.228%",
+        "opponentType": "Rock",
         "winPct": 41.468
       },
       {
-        "opponentType": "64.466%",
+        "opponentType": "Bug",
         "winPct": 58.918
       },
       {
-        "opponentType": "29.315%",
+        "opponentType": "Ghost",
         "winPct": 46.967
       },
       {
-        "opponentType": "63.269%",
+        "opponentType": "Steel",
         "winPct": 52.741
       },
       {
-        "opponentType": "52.917%",
+        "opponentType": "Fire",
         "winPct": 51.034
       },
       {
-        "opponentType": "50.234%",
+        "opponentType": "Water",
         "winPct": 46.993
       },
       {
-        "opponentType": "50.450%",
+        "opponentType": "Grass",
         "winPct": 64.779
       },
       {
-        "opponentType": "54.454%",
+        "opponentType": "Electric",
         "winPct": 44.684
       },
       {
-        "opponentType": "28.222%",
+        "opponentType": "Psychic",
         "winPct": 44.8
       },
       {
-        "opponentType": "65.263%",
+        "opponentType": "Ice",
         "winPct": 25.405
       },
       {
-        "opponentType": "60.821%",
+        "opponentType": "Dragon",
         "winPct": 46.114
       },
       {
-        "opponentType": "68.867%",
+        "opponentType": "Dark",
         "winPct": 53.297
       },
       {
-        "opponentType": "28.452%",
+        "opponentType": "Fairy",
         "winPct": 48.517
       }
     ],
     "Poison": [
       {
-        "opponentType": "42.663%",
+        "opponentType": "Normal",
         "winPct": 53.576
       },
       {
-        "opponentType": "62.518%",
+        "opponentType": "Fighting",
         "winPct": 60.697
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Flying",
         "winPct": 33.524
       },
       {
-        "opponentType": "66.476%",
+        "opponentType": "Poison",
         "winPct": 0
       },
       {
-        "opponentType": "59.835%",
+        "opponentType": "Ground",
         "winPct": 20.769
       },
       {
-        "opponentType": "41.468%",
+        "opponentType": "Rock",
         "winPct": 42.053
       },
       {
-        "opponentType": "58.918%",
+        "opponentType": "Bug",
         "winPct": 55.03
       },
       {
-        "opponentType": "46.967%",
+        "opponentType": "Ghost",
         "winPct": 55.182
       },
       {
-        "opponentType": "52.741%",
+        "opponentType": "Steel",
         "winPct": 30.16
       },
       {
-        "opponentType": "51.034%",
+        "opponentType": "Fire",
         "winPct": 47.116
       },
       {
-        "opponentType": "46.993%",
+        "opponentType": "Water",
         "winPct": 51.323
       },
       {
-        "opponentType": "64.779%",
+        "opponentType": "Grass",
         "winPct": 69.424
       },
       {
-        "opponentType": "44.684%",
+        "opponentType": "Electric",
         "winPct": 59.27
       },
       {
-        "opponentType": "44.800%",
+        "opponentType": "Psychic",
         "winPct": 41.638
       },
       {
-        "opponentType": "25.405%",
+        "opponentType": "Ice",
         "winPct": 55.073
       },
       {
-        "opponentType": "46.114%",
+        "opponentType": "Dragon",
         "winPct": 43.339
       },
       {
-        "opponentType": "53.297%",
+        "opponentType": "Dark",
         "winPct": 55.546
       },
       {
-        "opponentType": "48.517%",
+        "opponentType": "Fairy",
         "winPct": 66.565
       }
     ],
     "Ground": [
       {
-        "opponentType": "53.576%",
+        "opponentType": "Normal",
         "winPct": 54.076
       },
       {
-        "opponentType": "60.697%",
+        "opponentType": "Fighting",
         "winPct": 48.607
       },
       {
-        "opponentType": "33.524%",
+        "opponentType": "Flying",
         "winPct": 40.165
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Poison",
         "winPct": 79.231
       },
       {
-        "opponentType": "20.769%",
+        "opponentType": "Ground",
         "winPct": 0
       },
       {
-        "opponentType": "42.053%",
+        "opponentType": "Rock",
         "winPct": 73.879
       },
       {
-        "opponentType": "55.030%",
+        "opponentType": "Bug",
         "winPct": 55.03
       },
       {
-        "opponentType": "55.182%",
+        "opponentType": "Ghost",
         "winPct": 59.737
       },
       {
-        "opponentType": "30.160%",
+        "opponentType": "Steel",
         "winPct": 60.268
       },
       {
-        "opponentType": "47.116%",
+        "opponentType": "Fire",
         "winPct": 66.201
       },
       {
-        "opponentType": "51.323%",
+        "opponentType": "Water",
         "winPct": 34.72
       },
       {
-        "opponentType": "69.424%",
+        "opponentType": "Grass",
         "winPct": 29.395
       },
       {
-        "opponentType": "59.270%",
+        "opponentType": "Electric",
         "winPct": 79.091
       },
       {
-        "opponentType": "41.638%",
+        "opponentType": "Psychic",
         "winPct": 48.091
       },
       {
-        "opponentType": "55.073%",
+        "opponentType": "Ice",
         "winPct": 24.324
       },
       {
-        "opponentType": "43.339%",
+        "opponentType": "Dragon",
         "winPct": 56.159
       },
       {
-        "opponentType": "55.546%",
+        "opponentType": "Dark",
         "winPct": 41.051
       },
       {
-        "opponentType": "66.565%",
+        "opponentType": "Fairy",
         "winPct": 53.157
       }
     ],
     "Rock": [
       {
-        "opponentType": "54.076%",
+        "opponentType": "Normal",
         "winPct": 71.668
       },
       {
-        "opponentType": "48.607%",
+        "opponentType": "Fighting",
         "winPct": 19.772
       },
       {
-        "opponentType": "40.165%",
+        "opponentType": "Flying",
         "winPct": 58.532
       },
       {
-        "opponentType": "79.231%",
+        "opponentType": "Poison",
         "winPct": 57.947
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Ground",
         "winPct": 26.121
       },
       {
-        "opponentType": "73.879%",
+        "opponentType": "Rock",
         "winPct": 0
       },
       {
-        "opponentType": "55.030%",
+        "opponentType": "Bug",
         "winPct": 61.089
       },
       {
-        "opponentType": "59.737%",
+        "opponentType": "Ghost",
         "winPct": 61.609
       },
       {
-        "opponentType": "60.268%",
+        "opponentType": "Steel",
         "winPct": 20.871
       },
       {
-        "opponentType": "66.201%",
+        "opponentType": "Fire",
         "winPct": 81.088
       },
       {
-        "opponentType": "34.720%",
+        "opponentType": "Water",
         "winPct": 37.178
       },
       {
-        "opponentType": "29.395%",
+        "opponentType": "Grass",
         "winPct": 49.956
       },
       {
-        "opponentType": "79.091%",
+        "opponentType": "Electric",
         "winPct": 53.485
       },
       {
-        "opponentType": "48.091%",
+        "opponentType": "Psychic",
         "winPct": 51.142
       },
       {
-        "opponentType": "24.324%",
+        "opponentType": "Ice",
         "winPct": 70.224
       },
       {
-        "opponentType": "56.159%",
+        "opponentType": "Dragon",
         "winPct": 45.066
       },
       {
-        "opponentType": "41.051%",
+        "opponentType": "Dark",
         "winPct": 51.663
       },
       {
-        "opponentType": "53.157%",
+        "opponentType": "Fairy",
         "winPct": 57.381
       }
     ],
     "Bug": [
       {
-        "opponentType": "71.668%",
+        "opponentType": "Normal",
         "winPct": 48.054
       },
       {
-        "opponentType": "19.772%",
+        "opponentType": "Fighting",
         "winPct": 35.534
       },
       {
-        "opponentType": "58.532%",
+        "opponentType": "Flying",
         "winPct": 41.082
       },
       {
-        "opponentType": "57.947%",
+        "opponentType": "Poison",
         "winPct": 44.97
       },
       {
-        "opponentType": "26.121%",
+        "opponentType": "Ground",
         "winPct": 44.97
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Rock",
         "winPct": 38.911
       },
       {
-        "opponentType": "61.089%",
+        "opponentType": "Bug",
         "winPct": 0
       },
       {
-        "opponentType": "61.609%",
+        "opponentType": "Ghost",
         "winPct": 52.61
       },
       {
-        "opponentType": "20.871%",
+        "opponentType": "Steel",
         "winPct": 30.956
       },
       {
-        "opponentType": "81.088%",
+        "opponentType": "Fire",
         "winPct": 34.862
       },
       {
-        "opponentType": "37.178%",
+        "opponentType": "Water",
         "winPct": 43.566
       },
       {
-        "opponentType": "49.956%",
+        "opponentType": "Grass",
         "winPct": 67.761
       },
       {
-        "opponentType": "53.485%",
+        "opponentType": "Electric",
         "winPct": 33.664
       },
       {
-        "opponentType": "51.142%",
+        "opponentType": "Psychic",
         "winPct": 60.916
       },
       {
-        "opponentType": "70.224%",
+        "opponentType": "Ice",
         "winPct": 77.817
       },
       {
-        "opponentType": "45.066%",
+        "opponentType": "Dragon",
         "winPct": 37.381
       },
       {
-        "opponentType": "51.663%",
+        "opponentType": "Dark",
         "winPct": 68.873
       },
       {
-        "opponentType": "57.381%",
+        "opponentType": "Fairy",
         "winPct": 57.807
       }
     ],
     "Ghost": [
       {
-        "opponentType": "48.054%",
+        "opponentType": "Normal",
         "winPct": 42.349
       },
       {
-        "opponentType": "35.534%",
+        "opponentType": "Fighting",
         "winPct": 70.685
       },
       {
-        "opponentType": "41.082%",
+        "opponentType": "Flying",
         "winPct": 53.033
       },
       {
-        "opponentType": "44.970%",
+        "opponentType": "Poison",
         "winPct": 44.818
       },
       {
-        "opponentType": "44.970%",
+        "opponentType": "Ground",
         "winPct": 40.263
       },
       {
-        "opponentType": "38.911%",
+        "opponentType": "Rock",
         "winPct": 38.391
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Bug",
         "winPct": 47.39
       },
       {
-        "opponentType": "52.610%",
+        "opponentType": "Ghost",
         "winPct": 0
       },
       {
-        "opponentType": "30.956%",
+        "opponentType": "Steel",
         "winPct": 48.767
       },
       {
-        "opponentType": "34.862%",
+        "opponentType": "Fire",
         "winPct": 48.475
       },
       {
-        "opponentType": "43.566%",
+        "opponentType": "Water",
         "winPct": 48.167
       },
       {
-        "opponentType": "67.761%",
+        "opponentType": "Grass",
         "winPct": 59.956
       },
       {
-        "opponentType": "33.664%",
+        "opponentType": "Electric",
         "winPct": 68.502
       },
       {
-        "opponentType": "60.916%",
+        "opponentType": "Psychic",
         "winPct": 64.922
       },
       {
-        "opponentType": "77.817%",
+        "opponentType": "Ice",
         "winPct": 56.345
       },
       {
-        "opponentType": "37.381%",
+        "opponentType": "Dragon",
         "winPct": 52.608
       },
       {
-        "opponentType": "68.873%",
+        "opponentType": "Dark",
         "winPct": 34.71
       },
       {
-        "opponentType": "57.807%",
+        "opponentType": "Fairy",
         "winPct": 51.476
       }
     ],
     "Steel": [
       {
-        "opponentType": "42.349%",
+        "opponentType": "Normal",
         "winPct": 59.167
       },
       {
-        "opponentType": "70.685%",
+        "opponentType": "Fighting",
         "winPct": 36.731
       },
       {
-        "opponentType": "53.033%",
+        "opponentType": "Flying",
         "winPct": 47.259
       },
       {
-        "opponentType": "44.818%",
+        "opponentType": "Poison",
         "winPct": 69.84
       },
       {
-        "opponentType": "40.263%",
+        "opponentType": "Ground",
         "winPct": 39.732
       },
       {
-        "opponentType": "38.391%",
+        "opponentType": "Rock",
         "winPct": 79.129
       },
       {
-        "opponentType": "47.390%",
+        "opponentType": "Bug",
         "winPct": 69.044
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Ghost",
         "winPct": 51.233
       },
       {
-        "opponentType": "48.767%",
+        "opponentType": "Steel",
         "winPct": 0
       },
       {
-        "opponentType": "48.475%",
+        "opponentType": "Fire",
         "winPct": 26.699
       },
       {
-        "opponentType": "48.167%",
+        "opponentType": "Water",
         "winPct": 39.6
       },
       {
-        "opponentType": "59.956%",
+        "opponentType": "Grass",
         "winPct": 63.564
       },
       {
-        "opponentType": "68.502%",
+        "opponentType": "Electric",
         "winPct": 41.964
       },
       {
-        "opponentType": "64.922%",
+        "opponentType": "Psychic",
         "winPct": 66.725
       },
       {
-        "opponentType": "56.345%",
+        "opponentType": "Ice",
         "winPct": 81.517
       },
       {
-        "opponentType": "52.608%",
+        "opponentType": "Dragon",
         "winPct": 59.555
       },
       {
-        "opponentType": "34.710%",
+        "opponentType": "Dark",
         "winPct": 50.349
       },
       {
-        "opponentType": "51.476%",
+        "opponentType": "Fairy",
         "winPct": 67.876
       }
     ],
     "Fire": [
       {
-        "opponentType": "59.167%",
+        "opponentType": "Normal",
         "winPct": 50.779
       },
       {
-        "opponentType": "36.731%",
+        "opponentType": "Fighting",
         "winPct": 47.083
       },
       {
-        "opponentType": "47.259%",
+        "opponentType": "Flying",
         "winPct": 48.966
       },
       {
-        "opponentType": "69.840%",
+        "opponentType": "Poison",
         "winPct": 52.884
       },
       {
-        "opponentType": "39.732%",
+        "opponentType": "Ground",
         "winPct": 33.799
       },
       {
-        "opponentType": "79.129%",
+        "opponentType": "Rock",
         "winPct": 18.912
       },
       {
-        "opponentType": "69.044%",
+        "opponentType": "Bug",
         "winPct": 65.138
       },
       {
-        "opponentType": "51.233%",
+        "opponentType": "Ghost",
         "winPct": 51.525
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Steel",
         "winPct": 73.301
       },
       {
-        "opponentType": "26.699%",
+        "opponentType": "Fire",
         "winPct": 0
       },
       {
-        "opponentType": "39.600%",
+        "opponentType": "Water",
         "winPct": 35.471
       },
       {
-        "opponentType": "63.564%",
+        "opponentType": "Grass",
         "winPct": 76.466
       },
       {
-        "opponentType": "41.964%",
+        "opponentType": "Electric",
         "winPct": 49.786
       },
       {
-        "opponentType": "66.725%",
+        "opponentType": "Psychic",
         "winPct": 52.186
       },
       {
-        "opponentType": "81.517%",
+        "opponentType": "Ice",
         "winPct": 75.962
       },
       {
-        "opponentType": "59.555%",
+        "opponentType": "Dragon",
         "winPct": 24.106
       },
       {
-        "opponentType": "50.349%",
+        "opponentType": "Dark",
         "winPct": 43.371
       },
       {
-        "opponentType": "67.876%",
+        "opponentType": "Fairy",
         "winPct": 67.955
       }
     ],
     "Water": [
       {
-        "opponentType": "50.779%",
+        "opponentType": "Normal",
         "winPct": 53.349
       },
       {
-        "opponentType": "47.083%",
+        "opponentType": "Fighting",
         "winPct": 49.766
       },
       {
-        "opponentType": "48.966%",
+        "opponentType": "Flying",
         "winPct": 53.007
       },
       {
-        "opponentType": "52.884%",
+        "opponentType": "Poison",
         "winPct": 48.677
       },
       {
-        "opponentType": "33.799%",
+        "opponentType": "Ground",
         "winPct": 65.28
       },
       {
-        "opponentType": "18.912%",
+        "opponentType": "Rock",
         "winPct": 62.822
       },
       {
-        "opponentType": "65.138%",
+        "opponentType": "Bug",
         "winPct": 56.434
       },
       {
-        "opponentType": "51.525%",
+        "opponentType": "Ghost",
         "winPct": 51.833
       },
       {
-        "opponentType": "73.301%",
+        "opponentType": "Steel",
         "winPct": 60.4
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Fire",
         "winPct": 64.529
       },
       {
-        "opponentType": "35.471%",
+        "opponentType": "Water",
         "winPct": 0
       },
       {
-        "opponentType": "76.466%",
+        "opponentType": "Grass",
         "winPct": 26.029
       },
       {
-        "opponentType": "49.786%",
+        "opponentType": "Electric",
         "winPct": 25.557
       },
       {
-        "opponentType": "52.186%",
+        "opponentType": "Psychic",
         "winPct": 51.72
       },
       {
-        "opponentType": "75.962%",
+        "opponentType": "Ice",
         "winPct": 44.539
       },
       {
-        "opponentType": "24.106%",
+        "opponentType": "Dragon",
         "winPct": 33.595
       },
       {
-        "opponentType": "43.371%",
+        "opponentType": "Dark",
         "winPct": 46.662
       },
       {
-        "opponentType": "67.955%",
+        "opponentType": "Fairy",
         "winPct": 51.714
       }
     ],
     "Grass": [
       {
-        "opponentType": "53.349%",
+        "opponentType": "Normal",
         "winPct": 50.439
       },
       {
-        "opponentType": "49.766%",
+        "opponentType": "Fighting",
         "winPct": 49.55
       },
       {
-        "opponentType": "53.007%",
+        "opponentType": "Flying",
         "winPct": 35.221
       },
       {
-        "opponentType": "48.677%",
+        "opponentType": "Poison",
         "winPct": 30.576
       },
       {
-        "opponentType": "65.280%",
+        "opponentType": "Ground",
         "winPct": 70.605
       },
       {
-        "opponentType": "62.822%",
+        "opponentType": "Rock",
         "winPct": 50.044
       },
       {
-        "opponentType": "56.434%",
+        "opponentType": "Bug",
         "winPct": 32.239
       },
       {
-        "opponentType": "51.833%",
+        "opponentType": "Ghost",
         "winPct": 40.044
       },
       {
-        "opponentType": "60.400%",
+        "opponentType": "Steel",
         "winPct": 36.436
       },
       {
-        "opponentType": "64.529%",
+        "opponentType": "Fire",
         "winPct": 23.534
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Water",
         "winPct": 73.971
       },
       {
-        "opponentType": "26.029%",
+        "opponentType": "Grass",
         "winPct": 0
       },
       {
-        "opponentType": "25.557%",
+        "opponentType": "Electric",
         "winPct": 67.749
       },
       {
-        "opponentType": "51.720%",
+        "opponentType": "Psychic",
         "winPct": 57.596
       },
       {
-        "opponentType": "44.539%",
+        "opponentType": "Ice",
         "winPct": 26.415
       },
       {
-        "opponentType": "33.595%",
+        "opponentType": "Dragon",
         "winPct": 31.913
       },
       {
-        "opponentType": "46.662%",
+        "opponentType": "Dark",
         "winPct": 37.133
       },
       {
-        "opponentType": "51.714%",
+        "opponentType": "Fairy",
         "winPct": 60.402
       }
     ],
     "Electric": [
       {
-        "opponentType": "50.439%",
+        "opponentType": "Normal",
         "winPct": 43.046
       },
       {
-        "opponentType": "49.550%",
+        "opponentType": "Fighting",
         "winPct": 45.546
       },
       {
-        "opponentType": "35.221%",
+        "opponentType": "Flying",
         "winPct": 55.316
       },
       {
-        "opponentType": "30.576%",
+        "opponentType": "Poison",
         "winPct": 40.73
       },
       {
-        "opponentType": "70.605%",
+        "opponentType": "Ground",
         "winPct": 20.909
       },
       {
-        "opponentType": "50.044%",
+        "opponentType": "Rock",
         "winPct": 46.515
       },
       {
-        "opponentType": "32.239%",
+        "opponentType": "Bug",
         "winPct": 66.336
       },
       {
-        "opponentType": "40.044%",
+        "opponentType": "Ghost",
         "winPct": 31.498
       },
       {
-        "opponentType": "36.436%",
+        "opponentType": "Steel",
         "winPct": 58.036
       },
       {
-        "opponentType": "23.534%",
+        "opponentType": "Fire",
         "winPct": 50.214
       },
       {
-        "opponentType": "73.971%",
+        "opponentType": "Water",
         "winPct": 74.443
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Grass",
         "winPct": 32.251
       },
       {
-        "opponentType": "67.749%",
+        "opponentType": "Electric",
         "winPct": 0
       },
       {
-        "opponentType": "57.596%",
+        "opponentType": "Psychic",
         "winPct": 29.204
       },
       {
-        "opponentType": "26.415%",
+        "opponentType": "Ice",
         "winPct": 40.317
       },
       {
-        "opponentType": "31.913%",
+        "opponentType": "Dragon",
         "winPct": 19.326
       },
       {
-        "opponentType": "37.133%",
+        "opponentType": "Dark",
         "winPct": 43.113
       },
       {
-        "opponentType": "60.402%",
+        "opponentType": "Fairy",
         "winPct": 44.289
       }
     ],
     "Psychic": [
       {
-        "opponentType": "43.046%",
+        "opponentType": "Normal",
         "winPct": 49.899
       },
       {
-        "opponentType": "45.546%",
+        "opponentType": "Fighting",
         "winPct": 71.778
       },
       {
-        "opponentType": "55.316%",
+        "opponentType": "Flying",
         "winPct": 55.2
       },
       {
-        "opponentType": "40.730%",
+        "opponentType": "Poison",
         "winPct": 58.362
       },
       {
-        "opponentType": "20.909%",
+        "opponentType": "Ground",
         "winPct": 51.909
       },
       {
-        "opponentType": "46.515%",
+        "opponentType": "Rock",
         "winPct": 48.858
       },
       {
-        "opponentType": "66.336%",
+        "opponentType": "Bug",
         "winPct": 39.084
       },
       {
-        "opponentType": "31.498%",
+        "opponentType": "Ghost",
         "winPct": 35.078
       },
       {
-        "opponentType": "58.036%",
+        "opponentType": "Steel",
         "winPct": 33.275
       },
       {
-        "opponentType": "50.214%",
+        "opponentType": "Fire",
         "winPct": 47.814
       },
       {
-        "opponentType": "74.443%",
+        "opponentType": "Water",
         "winPct": 48.28
       },
       {
-        "opponentType": "32.251%",
+        "opponentType": "Grass",
         "winPct": 42.404
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Electric",
         "winPct": 70.796
       },
       {
-        "opponentType": "29.204%",
+        "opponentType": "Psychic",
         "winPct": 0
       },
       {
-        "opponentType": "40.317%",
+        "opponentType": "Ice",
         "winPct": 68.567
       },
       {
-        "opponentType": "19.326%",
+        "opponentType": "Dragon",
         "winPct": 43.085
       },
       {
-        "opponentType": "43.113%",
+        "opponentType": "Dark",
         "winPct": 24.493
       },
       {
-        "opponentType": "44.289%",
+        "opponentType": "Fairy",
         "winPct": 52.631
       }
     ],
     "Ice": [
       {
-        "opponentType": "49.899%",
+        "opponentType": "Normal",
         "winPct": 45.468
       },
       {
-        "opponentType": "71.778%",
+        "opponentType": "Fighting",
         "winPct": 34.737
       },
       {
-        "opponentType": "55.200%",
+        "opponentType": "Flying",
         "winPct": 74.595
       },
       {
-        "opponentType": "58.362%",
+        "opponentType": "Poison",
         "winPct": 44.927
       },
       {
-        "opponentType": "51.909%",
+        "opponentType": "Ground",
         "winPct": 75.676
       },
       {
-        "opponentType": "48.858%",
+        "opponentType": "Rock",
         "winPct": 29.776
       },
       {
-        "opponentType": "39.084%",
+        "opponentType": "Bug",
         "winPct": 22.183
       },
       {
-        "opponentType": "35.078%",
+        "opponentType": "Ghost",
         "winPct": 43.655
       },
       {
-        "opponentType": "33.275%",
+        "opponentType": "Steel",
         "winPct": 18.483
       },
       {
-        "opponentType": "47.814%",
+        "opponentType": "Fire",
         "winPct": 24.038
       },
       {
-        "opponentType": "48.280%",
+        "opponentType": "Water",
         "winPct": 55.461
       },
       {
-        "opponentType": "42.404%",
+        "opponentType": "Grass",
         "winPct": 73.585
       },
       {
-        "opponentType": "70.796%",
+        "opponentType": "Electric",
         "winPct": 59.683
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Psychic",
         "winPct": 31.433
       },
       {
-        "opponentType": "68.567%",
+        "opponentType": "Ice",
         "winPct": 0
       },
       {
-        "opponentType": "43.085%",
+        "opponentType": "Dragon",
         "winPct": 62.994
       },
       {
-        "opponentType": "24.493%",
+        "opponentType": "Dark",
         "winPct": 63.142
       },
       {
-        "opponentType": "52.631%",
+        "opponentType": "Fairy",
         "winPct": 35.659
       }
     ],
     "Dragon": [
       {
-        "opponentType": "45.468%",
+        "opponentType": "Normal",
         "winPct": 57.343
       },
       {
-        "opponentType": "34.737%",
+        "opponentType": "Fighting",
         "winPct": 39.179
       },
       {
-        "opponentType": "74.595%",
+        "opponentType": "Flying",
         "winPct": 53.886
       },
       {
-        "opponentType": "44.927%",
+        "opponentType": "Poison",
         "winPct": 56.661
       },
       {
-        "opponentType": "75.676%",
+        "opponentType": "Ground",
         "winPct": 43.841
       },
       {
-        "opponentType": "29.776%",
+        "opponentType": "Rock",
         "winPct": 54.934
       },
       {
-        "opponentType": "22.183%",
+        "opponentType": "Bug",
         "winPct": 62.619
       },
       {
-        "opponentType": "43.655%",
+        "opponentType": "Ghost",
         "winPct": 47.392
       },
       {
-        "opponentType": "18.483%",
+        "opponentType": "Steel",
         "winPct": 40.445
       },
       {
-        "opponentType": "24.038%",
+        "opponentType": "Fire",
         "winPct": 75.894
       },
       {
-        "opponentType": "55.461%",
+        "opponentType": "Water",
         "winPct": 66.405
       },
       {
-        "opponentType": "73.585%",
+        "opponentType": "Grass",
         "winPct": 68.087
       },
       {
-        "opponentType": "59.683%",
+        "opponentType": "Electric",
         "winPct": 80.674
       },
       {
-        "opponentType": "31.433%",
+        "opponentType": "Psychic",
         "winPct": 56.915
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Ice",
         "winPct": 37.006
       },
       {
-        "opponentType": "62.994%",
+        "opponentType": "Dragon",
         "winPct": 0
       },
       {
-        "opponentType": "63.142%",
+        "opponentType": "Dark",
         "winPct": 42.689
       },
       {
-        "opponentType": "35.659%",
+        "opponentType": "Fairy",
         "winPct": 37.403
       }
     ],
     "Dark": [
       {
-        "opponentType": "57.343%",
+        "opponentType": "Normal",
         "winPct": 61.782
       },
       {
-        "opponentType": "39.179%",
+        "opponentType": "Fighting",
         "winPct": 31.133
       },
       {
-        "opponentType": "53.886%",
+        "opponentType": "Flying",
         "winPct": 46.703
       },
       {
-        "opponentType": "56.661%",
+        "opponentType": "Poison",
         "winPct": 44.454
       },
       {
-        "opponentType": "43.841%",
+        "opponentType": "Ground",
         "winPct": 58.949
       },
       {
-        "opponentType": "54.934%",
+        "opponentType": "Rock",
         "winPct": 48.337
       },
       {
-        "opponentType": "62.619%",
+        "opponentType": "Bug",
         "winPct": 31.127
       },
       {
-        "opponentType": "47.392%",
+        "opponentType": "Ghost",
         "winPct": 65.29
       },
       {
-        "opponentType": "40.445%",
+        "opponentType": "Steel",
         "winPct": 49.651
       },
       {
-        "opponentType": "75.894%",
+        "opponentType": "Fire",
         "winPct": 56.629
       },
       {
-        "opponentType": "66.405%",
+        "opponentType": "Water",
         "winPct": 53.338
       },
       {
-        "opponentType": "68.087%",
+        "opponentType": "Grass",
         "winPct": 62.867
       },
       {
-        "opponentType": "80.674%",
+        "opponentType": "Electric",
         "winPct": 56.887
       },
       {
-        "opponentType": "56.915%",
+        "opponentType": "Psychic",
         "winPct": 75.507
       },
       {
-        "opponentType": "37.006%",
+        "opponentType": "Ice",
         "winPct": 36.858
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Dragon",
         "winPct": 57.311
       },
       {
-        "opponentType": "42.689%",
+        "opponentType": "Dark",
         "winPct": 0
       },
       {
-        "opponentType": "37.403%",
+        "opponentType": "Fairy",
         "winPct": 34.56
       }
     ],
     "Fairy": [
       {
-        "opponentType": "61.782%",
+        "opponentType": "Normal",
         "winPct": 54.048
       },
       {
-        "opponentType": "31.133%",
+        "opponentType": "Fighting",
         "winPct": 71.548
       },
       {
-        "opponentType": "46.703%",
+        "opponentType": "Flying",
         "winPct": 51.483
       },
       {
-        "opponentType": "44.454%",
+        "opponentType": "Poison",
         "winPct": 33.435
       },
       {
-        "opponentType": "58.949%",
+        "opponentType": "Ground",
         "winPct": 46.843
       },
       {
-        "opponentType": "48.337%",
+        "opponentType": "Rock",
         "winPct": 42.619
       },
       {
-        "opponentType": "31.127%",
+        "opponentType": "Bug",
         "winPct": 42.193
       },
       {
-        "opponentType": "65.290%",
+        "opponentType": "Ghost",
         "winPct": 48.524
       },
       {
-        "opponentType": "49.651%",
+        "opponentType": "Steel",
         "winPct": 32.124
       },
       {
-        "opponentType": "56.629%",
+        "opponentType": "Fire",
         "winPct": 32.045
       },
       {
-        "opponentType": "53.338%",
+        "opponentType": "Water",
         "winPct": 48.286
       },
       {
-        "opponentType": "62.867%",
+        "opponentType": "Grass",
         "winPct": 39.598
       },
       {
-        "opponentType": "56.887%",
+        "opponentType": "Electric",
         "winPct": 55.711
       },
       {
-        "opponentType": "75.507%",
+        "opponentType": "Psychic",
         "winPct": 47.369
       },
       {
-        "opponentType": "36.858%",
+        "opponentType": "Ice",
         "winPct": 64.341
       },
       {
-        "opponentType": "57.311%",
+        "opponentType": "Dragon",
         "winPct": 62.597
       },
       {
-        "opponentType": "0.000%",
+        "opponentType": "Dark",
         "winPct": 65.44
       },
       {
-        "opponentType": "34.560%",
+        "opponentType": "Fairy",
         "winPct": 0
       }
     ]

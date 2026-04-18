@@ -145,25 +145,20 @@ function compileForElo(elo) {
     if (!fs.existsSync(leadPath)) continue;
     
     const lines = fs.readFileSync(leadPath, 'utf-8').split('\n');
-    let inTable = false;
     const typeLeads = [];
     for (const line of lines) {
-      if (line.includes('+ ---- +')) {
-        inTable = !inTable;
-        continue;
-      }
-      if (!inTable || line.includes('Rank') || !line.trim()) continue;
-      
-      const parts = line.split('|').map(s => s.trim()).filter(s => s);
-      if (parts.length >= 4) {
-        const name = parts[1];
-        const usagePctStr = parts[2].replace('%', '');
-        const rawCount = parseInt(parts[3], 10);
-        typeLeads.push({
-          pokemon: name,
-          usagePct: parseFloat(usagePctStr),
-          rawCount: isNaN(rawCount) ? 0 : rawCount
-        });
+      if (line.startsWith('|') && !line.includes('Rank')) {
+        const parts = line.split('|').map(s => s.trim()).filter(s => s);
+        if (parts.length >= 4) {
+          const name = parts[1];
+          const usagePctStr = parts[2].replace('%', '');
+          const rawCount = parseInt(parts[3], 10);
+          typeLeads.push({
+            pokemon: name,
+            usagePct: parseFloat(usagePctStr),
+            rawCount: isNaN(rawCount) ? 0 : rawCount
+          });
+        }
       }
     }
     // ensure title case type match Dex.species.types format
@@ -181,7 +176,7 @@ function compileForElo(elo) {
     
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        if (line.startsWith('|        |')) { // Header line
+        if (!headerParsed && line.startsWith('|        |')) { // Header line
             const cols = line.split('|').map(s => s.trim()).filter(s => s);
             colTypes = cols.map(c => c.charAt(0).toUpperCase() + c.slice(1));
             headerParsed = true;
