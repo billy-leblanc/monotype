@@ -126,7 +126,7 @@ function App() {
         </div>
       )}
 
-      <div className="main-scroll-area">
+      <div className="main-content">
         <header className="app-header">
           <div className="header-top">
             <h1 className="title">
