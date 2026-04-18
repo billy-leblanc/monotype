@@ -6,9 +6,11 @@ import { TeamCard } from './components/TeamCard';
 import { AICoach } from './components/Chatbot';
 import { TeamUploader } from './components/TeamUploader';
 import { BattleTracker } from './components/BattleTracker';
+import { LeadAnalysis } from './components/LeadAnalysis';
+import { MatchupHeatmap } from './components/MatchupHeatmap';
 import type { OpponentPokemon } from './components/BattleTracker';
 import type { UserPokemon } from './utils/showdownParser';
-import { Search, Loader2, BarChart3, Users, Swords, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, Loader2, BarChart3, Users, Swords, X, ChevronDown, ChevronUp, FastForward, Activity } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import './App.css';
 
@@ -21,10 +23,12 @@ function App() {
   const [opponentTeam, setOpponentTeam] = useState<OpponentPokemon[]>([]);
   const [isAnalyzingLog, setIsAnalyzingLog] = useState(false);
   const [logError, setLogError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'pokemon' | 'teams' | 'types'>('pokemon');
+  const [activeTab, setActiveTab] = useState<'pokemon' | 'teams' | 'types' | 'leads' | 'matchups'>('pokemon');
   const [selectedMon, setSelectedMon] = useState<string | null>(null);
   const [openType, setOpenType] = useState<string | null>(null);
   const [elo, setElo] = useState<'1500' | '1630' | '1760'>('1760');
+  const [compactMode, setCompactMode] = useState(false);
+  const [headerCollapsed, setHeaderCollapsed] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -36,7 +40,7 @@ function App() {
         const stats = await fetchStats(elo);
         if (active) setData(stats);
       } catch (err) {
-        if (active) setError("Failed to load Showdown statistics. Try refreshing.");
+        if (active) setError("Failed to load compiled local metadata. Try running node scripts/compile-stats.js.");
       } finally {
         if (active) setLoading(false);
       }
@@ -45,8 +49,9 @@ function App() {
     return () => { active = false; };
   }, [elo]);
 
-  const filteredData = data?.pokemon.filter(p => p.name.toLowerCase().includes(search.toLowerCase())) || [];
-  const selectedPokemonData = data?.pokemon.find(p => p.name === selectedMon);
+  const filteredData = data?.pokemon?.filter(p => p.name.toLowerCase().includes(search.toLowerCase())) || [];
+  const selectedPokemonData = data?.pokemon?.find(p => p.name === selectedMon);
+  
   const handleAnalyzeLog = async (log: string) => {
     setLogError(null);
     try {
@@ -89,7 +94,7 @@ function App() {
         <div className="modal-overlay" onClick={() => setSelectedMon(null)}>
           <div className="modal-content glass-panel" onClick={e => e.stopPropagation()}>
             <div className="modal-header">
-              <h3>{selectedPokemonData.name} - Optimal 1760 Core Set</h3>
+              <h3>{selectedPokemonData.name} - Optimal Core Set</h3>
               <button className="close-btn" onClick={() => setSelectedMon(null)}>
                 <X size={20} />
               </button>
@@ -116,50 +121,59 @@ function App() {
         </div>
       )}
 
-      <header className="app-header">
-        <div className="header-top">
-          <div className="header-identity">
-            <AICoach allPokemon={data?.pokemon} userTeam={userTeam} />
-            <div className="header-action-area">
-              <TeamUploader onTeamLoaded={setUserTeam} />
+      <div className="main-content">
+        <header className="app-header">
+          <div className="header-top">
+            <div className="header-identity">
+              <AICoach allPokemon={data?.pokemon} userTeam={userTeam} />
+              <div className="header-action-area">
+                <TeamUploader onTeamLoaded={setUserTeam} />
+                <button 
+                  className="collapse-header-btn" 
+                  onClick={() => setHeaderCollapsed(!headerCollapsed)}
+                  title={headerCollapsed ? "Show Workflow" : "Hide Workflow"}
+                >
+                  {headerCollapsed ? <ChevronDown size={18} /> : <ChevronUp size={18} />}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="battle-workflow glass-panel centered-workflow">
-          <div className="workflow-step">
-            <div className="step-num">1</div>
-            <div className="step-txt">
-              <strong>Import Your Team</strong>
-              <p>Paste your Showdown export to start.</p>
+          {!headerCollapsed && (
+            <div className="battle-workflow glass-panel centered-workflow">
+              <div className="workflow-step">
+                <div className="step-num">1</div>
+                <div className="step-txt">
+                  <strong>Import Your Team</strong>
+                  <p>Paste your Showdown export to start.</p>
+                </div>
+              </div>
+              <div className="workflow-divider">→</div>
+              <div className="workflow-step">
+                <div className="step-num">2</div>
+                <div className="step-txt">
+                  <strong>Track the Match</strong>
+                  <p>Paste battle logs into the Live Tracker.</p>
+                </div>
+              </div>
+              <div className="workflow-divider">→</div>
+              <div className="workflow-step">
+                <div className="step-num">3</div>
+                <div className="step-txt">
+                  <strong>Win with the Coach</strong>
+                  <p>Ask Prof. Oak for switch-outs and calcs.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="workflow-divider">→</div>
-          <div className="workflow-step">
-            <div className="step-num">2</div>
-            <div className="step-txt">
-              <strong>Track the Match</strong>
-              <p>Paste battle logs into the <strong>Live Tracker</strong> (sidebar).</p>
-            </div>
-          </div>
-          <div className="workflow-divider">→</div>
-          <div className="workflow-step">
-            <div className="step-num">3</div>
-            <div className="step-txt">
-              <strong>Win with the Coach</strong>
-              <p>Ask <strong>Prof. Oak</strong> for switch-outs and calcs.</p>
-            </div>
-          </div>
-        </div>
-      </header>
+          )}
+        </header>
 
       <main className="app-main">
         <div className="elo-selection-bar">
-          <div className="elo-label">Show Accuracy for ELO:</div>
           <div className="elo-tabs-minimal">
-            <button className={`elo-minimal-btn ${elo === '1500' ? 'active' : ''}`} onClick={() => setElo('1500')}>1500</button>
-            <button className={`elo-minimal-btn ${elo === '1630' ? 'active' : ''}`} onClick={() => setElo('1630')}>1630</button>
-            <button className={`elo-minimal-btn ${elo === '1760' ? 'active' : ''}`} onClick={() => setElo('1760')}>1760</button>
+            <button className={`elo-minimal-btn ${elo === '1500' ? 'active' : ''}`} onClick={() => setElo('1500')}>1500 MMR</button>
+            <button className={`elo-minimal-btn ${elo === '1630' ? 'active' : ''}`} onClick={() => setElo('1630')}>1630 MMR</button>
+            <button className={`elo-minimal-btn ${elo === '1760' ? 'active' : ''}`} onClick={() => setElo('1760')}>1760 MMR</button>
           </div>
         </div>
         <div className="tab-navigation glass-panel">
@@ -167,52 +181,72 @@ function App() {
             className={`tab-btn ${activeTab === 'pokemon' ? 'active' : ''}`}
             onClick={() => setActiveTab('pokemon')}
           >
-            <Swords size={18} /> Pokémon Rankings
+            <Swords size={18} /> Rankings
           </button>
           <button 
             className={`tab-btn ${activeTab === 'teams' ? 'active' : ''}`}
             onClick={() => setActiveTab('teams')}
           >
-            <Users size={18} /> Best Teams
+            <Users size={18} /> Metagame Cores
           </button>
           <button 
             className={`tab-btn ${activeTab === 'types' ? 'active' : ''}`}
             onClick={() => setActiveTab('types')}
           >
-            <BarChart3 size={18} /> Type Popularity
+            <BarChart3 size={18} /> Popular Types
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'leads' ? 'active' : ''}`}
+            onClick={() => setActiveTab('leads')}
+          >
+            <FastForward size={18} /> Top Leads
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'matchups' ? 'active' : ''}`}
+            onClick={() => setActiveTab('matchups')}
+          >
+            <Activity size={18} /> Matchups
           </button>
         </div>
 
         {loading ? (
           <div className="loading-state">
             <Loader2 className="spinner" size={48} />
-            <p>Analyzing Latest High ELO Data...</p>
+            <p>Compiling Latest Metadata...</p>
           </div>
-        ) : error || !data ? (
+        ) : error || !data || !data.pokemon ? (
           <div className="error-state glass-panel">
             <p>{error || "No data available."}</p>
           </div>
         ) : (
           <div className="results-container">
             
-            {activeTab === 'teams' && (
+            {activeTab === 'leads' && data.leads && (
+              <LeadAnalysis leadsData={data.leads} />
+            )}
+
+            {activeTab === 'matchups' && data.matchups && (
+              <MatchupHeatmap matchupsData={data.matchups} />
+            )}
+
+            {activeTab === 'teams' && data.teams && (
               <div className="teams-view">
                 <div className="section-header">
                   <h2>Monotype Standard Cores</h2>
-                  <p className="section-desc">Select a Type to view its Top Standard Teams. Click individual Pokémon for their exact sets, or click Export to instantly copy the whole team for Showdown!</p>
+                  <p className="section-desc">Select a Type to view its Top Standard Teams.</p>
                 </div>
                 <div className="accordion-list">
                   {Object.entries(data.teams)
-                    .sort((a, b) => a[0].localeCompare(b[0])) // sort alphabetically
+                    .sort((a, b) => a[0].localeCompare(b[0]))
                     .map(([type, typeTeams]) => (
                     <div key={type} className="accordion-item glass-panel">
                       <button 
                         className={`accordion-header ${openType === type ? 'active' : ''}`}
                         onClick={() => setOpenType(openType === type ? null : type)}
                       >
-                        <span className="accordion-type">{type} Teams</span>
+                        <span className="accordion-type">{type}</span>
                         <div className="accordion-right">
-                          <span className="accordion-count">{typeTeams.length} Standard Sets</span>
+                          <span className="accordion-count">{typeTeams.length} Sets</span>
                           {openType === type ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                         </div>
                       </button>
@@ -236,7 +270,7 @@ function App() {
               </div>
             )}
 
-            {activeTab === 'types' && (
+            {activeTab === 'types' && data.typeUsage && (
               <div className="types-view glass-panel">
                  <div className="section-header">
                   <h2>Most Played Types</h2>
@@ -251,20 +285,20 @@ function App() {
                         type="category" 
                         stroke="#a5b4fc" 
                         width={100} 
-                        tick={{ fill: '#fff', fontSize: 15, fontWeight: 600 }} 
+                        tick={{ fill: '#fff', fontSize: 13, fontWeight: 500 }} 
                       />
                       <Tooltip 
-                        contentStyle={{ backgroundColor: '#1e1e2e', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px' }}
-                        itemStyle={{ color: '#ff6b6b', fontWeight: 600 }}
-                        cursor={{fill: 'rgba(255,255,255,0.05)'}}
+                        contentStyle={{ backgroundColor: 'rgba(10, 10, 18, 0.8)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}
+                        itemStyle={{ color: '#a5b4fc', fontWeight: 600 }}
+                        cursor={{fill: 'rgba(255,255,255,0.03)'}}
                       />
                       <Bar 
                         dataKey="count" 
                         radius={[0, 4, 4, 0]} 
-                        label={{ position: 'right', fill: '#ff6b6b', fontSize: 14, fontWeight: 700 }}
+                        label={{ position: 'right', fill: '#8b9ae6', fontSize: 13, fontWeight: 600 }}
                       >
                         {data.typeUsage.map((_, index) => (
-                          <Cell key={`cell-${index}`} fill={`hsl(${220 + index * 10}, 80%, 65%)`} />
+                          <Cell key={`cell-${index}`} fill={`hsl(${220 + index * 5}, 70%, 60%)`} />
                         ))}
                       </Bar>
                     </BarChart>
@@ -287,11 +321,32 @@ function App() {
                     />
                   </div>
                 </section>
-                <div className="results-header">
-                  <h2>Individual Rankings Breakdown</h2>
-                  <span>Showing {filteredData.length} Pokémon</span>
+                
+                <div className="type-filter-bank">
+                  {['Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water'].map(t => (
+                     <button 
+                       key={t}
+                       className={`type-filter-btn ${search.toLowerCase() === t.toLowerCase() ? 'active' : ''}`}
+                       onClick={() => setSearch(search.toLowerCase() === t.toLowerCase() ? '' : t)}
+                     >
+                       {t}
+                     </button>
+                  ))}
                 </div>
-                <div className="pokemon-list">
+
+                <div className="results-header">
+                  <div className="results-title-group">
+                    <h2>Rankings Breakdown</h2>
+                    <span>Showing {filteredData.length} Pokémon</span>
+                  </div>
+                  <button 
+                    className={`compact-toggle-btn ${compactMode ? 'active' : ''}`}
+                    onClick={() => setCompactMode(!compactMode)}
+                  >
+                    Compact View
+                  </button>
+                </div>
+                <div className={`pokemon-list ${compactMode ? 'compact-list' : ''}`}>
                   {filteredData.slice(0, 150).map((pokemon) => {
                     const realRank = data.pokemon.findIndex(p => p.name === pokemon.name) + 1;
                     return (
@@ -299,6 +354,7 @@ function App() {
                         key={pokemon.name} 
                         data={pokemon} 
                         rank={realRank} 
+                        compact={compactMode}
                       />
                     );
                   })}
@@ -309,6 +365,7 @@ function App() {
           </div>
         )}
       </main>
+      </div>
     </div>
   );
 }

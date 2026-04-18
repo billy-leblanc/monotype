@@ -1,20 +1,17 @@
 .battle-tracker-sidebar {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+  position: relative;
   width: 50px;
-  height: calc(100vh - 2rem);
+  height: 100vh;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: 0;
-  background: rgba(15, 15, 25, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(15, 15, 25, 0.6);
+  backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(139, 92, 246, 0.2);
+  flex-shrink: 0;
 }
 
 .battle-tracker-sidebar.expanded {

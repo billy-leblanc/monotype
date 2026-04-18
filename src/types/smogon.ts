@@ -44,8 +44,21 @@ export interface TypeUsage {
   count: number;
 }
 
+export interface TopLead {
+  pokemon: string;
+  usagePct: number;
+  rawCount: number;
+}
+
+export interface MatchupEntry {
+  opponentType: string;
+  winPct: number;
+}
+
 export interface MonotypeData {
   pokemon: ParsedPokemon[];
   teams: Record<string, ExtractedTeam[]>;
   typeUsage: TypeUsage[];
+  leads: Record<string, TopLead[]>;
+  matchups: Record<string, MatchupEntry[]>;
 }

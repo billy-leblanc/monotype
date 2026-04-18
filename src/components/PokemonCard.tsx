@@ -6,16 +6,17 @@ import './PokemonCard.css';
 interface Props {
   data: ParsedPokemon;
   rank: number;
+  compact?: boolean;
 }
 
-export const PokemonCard: React.FC<Props> = ({ data, rank }) => {
+export const PokemonCard: React.FC<Props> = ({ data, rank, compact = false }) => {
   const [expanded, setExpanded] = useState(false);
 
   // Format utility
   const fmt = (num: number) => num.toFixed(1) + '%';
 
   return (
-    <div className="glass-panel pokemon-card">
+    <div className={`glass-panel pokemon-card ${compact ? 'compact-card' : ''}`}>
       <div className="card-header" onClick={() => setExpanded(!expanded)}>
         <div className="card-rank">#{rank}</div>
         <div className="card-main-info">
@@ -23,9 +24,11 @@ export const PokemonCard: React.FC<Props> = ({ data, rank }) => {
             <h2 className="pokemon-name">{data.name}</h2>
             <span className="pokemon-types">{data.types.join(' / ')}</span>
           </div>
-          <div className="usage-bar-container">
-            <div className="usage-bar" style={{ width: `${Math.min(data.usagePct, 100)}%` }}></div>
-          </div>
+          {!compact && (
+             <div className="usage-bar-container">
+               <div className="usage-bar" style={{ width: `${Math.min(data.usagePct, 100)}%` }}></div>
+             </div>
+          )}
         </div>
         <div className="card-stats-quick">
           <span className="usage-text">{fmt(data.usagePct)} Usage</span>
