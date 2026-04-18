@@ -3,12 +3,10 @@ import { fetchStats } from './services/statsFetcher';
 import type { MonotypeData } from './types/smogon';
 import { PokemonCard } from './components/PokemonCard';
 import { TeamCard } from './components/TeamCard';
-import { AICoach } from './components/Chatbot';
-import { TeamUploader } from './components/TeamUploader';
-import { BattleTracker } from './components/BattleTracker';
+import { MatchAssistant } from './components/MatchAssistant';
 import { LeadAnalysis } from './components/LeadAnalysis';
 import { MatchupHeatmap } from './components/MatchupHeatmap';
-import type { OpponentPokemon } from './components/BattleTracker';
+import type { OpponentPokemon } from './components/MatchAssistant';
 import type { UserPokemon } from './utils/showdownParser';
 import { Search, Loader2, BarChart3, Users, Swords, X, ChevronDown, ChevronUp, FastForward, Activity } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
@@ -19,16 +17,18 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
+  
+  // App-level state for Match Assistant
   const [userTeam, setUserTeam] = useState<UserPokemon[]>([]);
   const [opponentTeam, setOpponentTeam] = useState<OpponentPokemon[]>([]);
   const [isAnalyzingLog, setIsAnalyzingLog] = useState(false);
   const [logError, setLogError] = useState<string | null>(null);
+  
   const [activeTab, setActiveTab] = useState<'pokemon' | 'teams' | 'types' | 'leads' | 'matchups'>('pokemon');
   const [selectedMon, setSelectedMon] = useState<string | null>(null);
   const [openType, setOpenType] = useState<string | null>(null);
   const [elo, setElo] = useState<'1500' | '1630' | '1760'>('1760');
   const [compactMode, setCompactMode] = useState(false);
-  const [headerCollapsed, setHeaderCollapsed] = useState(true);
 
   useEffect(() => {
     let active = true;
@@ -54,6 +54,7 @@ function App() {
   
   const handleAnalyzeLog = async (log: string) => {
     setLogError(null);
+    setIsAnalyzingLog(true);
     try {
       const apiBase = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
       const endpoint = `${apiBase}/api/chat`;
@@ -62,7 +63,7 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           messages: [{ role: 'user', content: `BATTLE_LOG_SYNC: ${log}` }],
-          pokemonContext: [], // In search mode we don't need full context
+          pokemonContext: [], 
           userTeamContext: userTeam
         })
       });
@@ -84,12 +85,16 @@ function App() {
 
   return (
     <div className="app-container">
-      <BattleTracker 
-        opponentTeam={opponentTeam} 
-        onLogSubmit={handleAnalyzeLog} 
-        isLoading={isAnalyzingLog}
-        error={logError}
+      <MatchAssistant 
+        allPokemon={data?.pokemon}
+        userTeam={userTeam}
+        onTeamLoaded={setUserTeam}
+        opponentTeam={opponentTeam}
+        onLogSubmit={handleAnalyzeLog}
+        isLogSyncing={isAnalyzingLog}
+        logError={logError}
       />
+
       {selectedMon && selectedPokemonData && (
         <div className="modal-overlay" onClick={() => setSelectedMon(null)}>
           <div className="modal-content glass-panel" onClick={e => e.stopPropagation()}>
@@ -121,51 +126,13 @@ function App() {
         </div>
       )}
 
-      <div className="main-content">
+      <div className="main-scroll-area">
         <header className="app-header">
           <div className="header-top">
-            <div className="header-identity">
-              <AICoach allPokemon={data?.pokemon} userTeam={userTeam} />
-              <div className="header-action-area">
-                <TeamUploader onTeamLoaded={setUserTeam} />
-                <button 
-                  className="collapse-header-btn" 
-                  onClick={() => setHeaderCollapsed(!headerCollapsed)}
-                  title={headerCollapsed ? "Show Workflow" : "Hide Workflow"}
-                >
-                  {headerCollapsed ? <ChevronDown size={18} /> : <ChevronUp size={18} />}
-                </button>
-              </div>
-            </div>
+            <h1 className="title">
+              <span className="accent">Monotype</span> Analyzer
+            </h1>
           </div>
-
-          {!headerCollapsed && (
-            <div className="battle-workflow glass-panel centered-workflow">
-              <div className="workflow-step">
-                <div className="step-num">1</div>
-                <div className="step-txt">
-                  <strong>Import Your Team</strong>
-                  <p>Paste your Showdown export to start.</p>
-                </div>
-              </div>
-              <div className="workflow-divider">→</div>
-              <div className="workflow-step">
-                <div className="step-num">2</div>
-                <div className="step-txt">
-                  <strong>Track the Match</strong>
-                  <p>Paste battle logs into the Live Tracker.</p>
-                </div>
-              </div>
-              <div className="workflow-divider">→</div>
-              <div className="workflow-step">
-                <div className="step-num">3</div>
-                <div className="step-txt">
-                  <strong>Win with the Coach</strong>
-                  <p>Ask Prof. Oak for switch-outs and calcs.</p>
-                </div>
-              </div>
-            </div>
-          )}
         </header>
 
       <main className="app-main">
