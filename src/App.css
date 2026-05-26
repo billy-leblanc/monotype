@@ -543,16 +543,47 @@
 
 .matchup-cell.interactive {
   cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  position: relative;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
   font-family: inherit;
 }
 .matchup-cell.interactive:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent, #818cf8);
 }
 .matchup-cell.selected {
   outline: 2px solid var(--accent, #818cf8);
   outline-offset: 2px;
+}
+/* obvious "this is clickable" affordance */
+.matchup-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent, #a5b4fc);
+  opacity: 0.7;
+  transition: opacity 0.12s ease;
+}
+.matchup-cell.interactive:hover .matchup-cta { opacity: 1; }
+.matchup-cell.selected .matchup-cta { opacity: 1; }
+
+/* shared type badges */
+.type-badges { display: inline-flex; gap: 4px; }
+.type-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.3px;
 }
 
 /* ---- Matchup cause-and-effect breakdown ---- */
@@ -634,8 +665,22 @@
 }
 .threat-id {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.side-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+.side-threat {
+  background: rgba(248, 113, 113, 0.18);
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.35);
 }
 .threat-name {
   font-weight: 700;
@@ -644,6 +689,17 @@
 .threat-usage {
   font-size: 0.78rem;
   color: var(--text-muted);
+}
+.victims-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  margin-right: 2px;
 }
 .threat-share {
   display: flex;

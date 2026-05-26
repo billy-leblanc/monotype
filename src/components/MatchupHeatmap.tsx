@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { MatchupEntry, ParsedPokemon } from '../types/smogon';
 import { MatchupBreakdown } from './MatchupBreakdown';
+import { Search, ChevronUp } from 'lucide-react';
 
 interface Props {
   matchupsData: Record<string, MatchupEntry[]>;
@@ -29,7 +30,10 @@ export function MatchupHeatmap({ matchupsData, allPokemon }: Props) {
     <div className="matchup-heatmap glass-panel">
       <div className="section-header">
         <h2>{selectedType} Matchup Spread</h2>
-        <p className="section-desc">Win rate vs other monotypes — <strong>click any matchup</strong> to see which mons cause it</p>
+        <p className="section-desc">
+          Win rate vs other monotypes. <Search size={13} style={{ verticalAlign: '-2px' }} />{' '}
+          <strong>Tap any matchup</strong> to see exactly which mons decide it.
+        </p>
       </div>
 
       <div className="type-selector">
@@ -59,6 +63,17 @@ export function MatchupHeatmap({ matchupsData, allPokemon }: Props) {
             >
               <span className="matchup-opp">vs {m.opponentType}</span>
               <span className="matchup-score">{m.winPct.toFixed(1)}%</span>
+              <span className="matchup-cta">
+                {isOpen ? (
+                  <>
+                    <ChevronUp size={13} /> hide
+                  </>
+                ) : (
+                  <>
+                    <Search size={13} /> why?
+                  </>
+                )}
+              </span>
             </button>
           );
         })}
