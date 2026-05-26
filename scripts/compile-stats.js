@@ -11,6 +11,15 @@ const TYPE_NAMES = [
   'fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy'
 ];
 
+function getTypes(name) {
+  const species = Dex.species.get(name);
+  if (species?.exists) return species.types;
+  const baseName = name.split('-')[0];
+  const baseSpecies = Dex.species.get(baseName);
+  if (baseSpecies?.exists) return baseSpecies.types;
+  return [];
+}
+
 function getTopEntries(record, max = 10) {
   if (!record) return [];
   const total = Object.values(record).reduce((a, b) => a + b, 0);
@@ -74,7 +83,8 @@ function compileForElo(elo) {
             name: counterName,
             score: payload[0] ?? 0,
             koPct: payload[1] ?? 0,
-            switchPct: payload[2] ?? 0
+            switchPct: payload[2] ?? 0,
+            types: getTypes(counterName)
         }))
         .sort((a, b) => (b.koPct + b.switchPct) - (a.koPct + a.switchPct))
         .slice(0, 10);

@@ -29,7 +29,7 @@ export interface ParsedPokemon {
   topAbilities: Array<{ name: string; pct: number }>;
   topSpreads: Array<{ name: string; pct: number }>;
   topTeammates: Array<{ name: string; pct: number }>;
-  counters: Array<{ name: string; score: number; koPct: number; switchPct: number }>;
+  counters: Array<{ name: string; score: number; koPct: number; switchPct: number; types: string[] }>;
 }
 
 export interface ExtractedTeam {
@@ -53,6 +53,24 @@ export interface TopLead {
 export interface MatchupEntry {
   opponentType: string;
   winPct: number;
+}
+
+export interface ThreatVictim {
+  yourMon: string;
+  move: string;
+  koText: string;
+  n: number;        // hits to KO (1 = OHKO, 2 = 2HKO ...)
+  chance: number;   // KO probability 0-1
+  pctMax: number;   // max damage as % of defender HP
+  severity: number; // internal weight 0-1
+}
+
+export interface MatchupThreat {
+  oppMon: string;
+  oppUsage: number;
+  score: number;        // usage-weighted threat score (relative)
+  sharePct: number;     // share of total matchup threat, for display
+  victims: ThreatVictim[];
 }
 
 export interface MonotypeData {

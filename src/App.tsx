@@ -199,7 +199,7 @@ function App() {
             )}
 
             {activeTab === 'matchups' && data.matchups && (
-              <MatchupHeatmap matchupsData={data.matchups} />
+              <MatchupHeatmap matchupsData={data.matchups} allPokemon={data.pokemon} />
             )}
 
             {activeTab === 'teams' && data.teams && (
