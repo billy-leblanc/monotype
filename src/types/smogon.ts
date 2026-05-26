@@ -73,6 +73,14 @@ export interface MatchupThreat {
   victims: ThreatVictim[];
 }
 
+export interface SpeedTier {
+  name: string;
+  side: 'you' | 'opp';
+  speed: number;
+  types: string[];
+  scarf: boolean;
+}
+
 export interface MonotypeData {
   pokemon: ParsedPokemon[];
   teams: Record<string, ExtractedTeam[]>;

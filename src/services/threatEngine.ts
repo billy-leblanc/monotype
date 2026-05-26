@@ -1,5 +1,5 @@
 import { calculate, Move, Pokemon, Generations } from '@smogon/calc';
-import type { ParsedPokemon, MatchupThreat, ThreatVictim } from '../types/smogon';
+import type { ParsedPokemon, MatchupThreat, ThreatVictim, SpeedTier } from '../types/smogon';
 
 const gen = Generations.get(9);
 
@@ -176,4 +176,32 @@ export function computeMatchupThreats(
   const total = top.reduce((s, t) => s + t.score, 0) || 1;
   for (const t of top) t.sharePct = (t.score / total) * 100;
   return top;
+}
+
+/**
+ * Speed tiers for both sides — who outspeeds whom on their most-used sets.
+ * Choice Scarf is applied as ×1.5 (the calc doesn't fold items into the raw stat).
+ * Returns a single list sorted fastest → slowest, tagged by side.
+ */
+export function computeSpeedTiers(
+  yourType: string,
+  oppType: string,
+  all: ParsedPokemon[]
+): SpeedTier[] {
+  const make = (type: string, side: 'you' | 'opp'): SpeedTier[] =>
+    all
+      .filter((p) => p.types.includes(type))
+      .slice(0, 10)
+      .map((p) => {
+        const mon = buildPokemon(p);
+        if (!mon) return null;
+        const scarf = (p.topItems[0]?.name ?? '') === 'choicescarf';
+        const speed = Math.round(mon.stats.spe * (scarf ? 1.5 : 1));
+        return { name: p.name, side, speed, types: p.types, scarf };
+      })
+      .filter((s): s is SpeedTier => s !== null);
+
+  return [...make(yourType, 'you'), ...make(oppType, 'opp')]
+    .sort((a, b) => b.speed - a.speed)
+    .slice(0, 16);
 }
